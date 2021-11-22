@@ -9,7 +9,7 @@
 * Peter completed the parse function and contributed to the locks as well, and the result file.
 * Our program runs even better than the test files if you consider a higher accuracy to mean better results. 
 * Please Consider this when looking at test results.
-# # Running Instructions
+# Running Instructions
 * * Run make clean; make
 * * Use make run# (where # is a number between 1 and 5) to run each of the scenarios
 * * Use make t# (where # is a number between 1 and 5) to run each of the tests
