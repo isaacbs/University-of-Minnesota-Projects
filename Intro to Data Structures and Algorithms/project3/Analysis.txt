@@ -1,0 +1,38 @@
+Method 							ArrayList Runtime 			LinkedList Runtime 			Explanation
+boolean add(T element) 				O(1) or O(n) 				O(1)					The add(T element) method has a runtime of O(1) for almost all cases for the ArrayList, however when the array is full, it requires that it be resized and copied over, in which case it's 
+																							complexity will be O(n). The linked list implementation never needs to iterate through anything thus its complexity will be constant.
+
+boolean add(int index, T element)   O(n) 						O(n) 					The add(int index, T element) methods for both classes here will have a similar runtime complexity of O(n) because they both require iterating through either the array or list in order to find 
+																							the index of the element. Even when the array is full, the runtime will be the same due to the fact that it checks where the next open element is, before attempting to place the new element.
+
+void clear()						O(1)						O(1)					There is only one line of code that runs for each of these methods, which executes a single command. Both reset the array or list to its original length without elements without any iteration.
+
+T get(int index)					O(1)						O(n)					The array here actually has a better runtime complexity than that of the linked list implementation. This is due to the fact that you can access an index in an array without having to iterate 
+																							through it. The linked list implementation has at worst an O(n) complexity because it requires iterating through "index" amounts of elements in the list before it can return a value.
+
+int indexOf(T element)				O(n)						O(n)					Both implementations of the method here have the same runtime complexity. They both are required to iterate through the either the list or the array until they find a value equal to element. I 
+																							was unable to determine a way to make the methods more efficient if the list or array was sorted however.
+
+boolean isEmpty()					O(1)						O(1)					Both of these methods utilize a simple if statement to see if the first element in the list or array is equal to null. Therefore they have the same constant time complexity.
+
+int size()							O(n)						O(n)					Both implementations of the method iterate through the list or array. The array iterates through the entire array only counting non-null values while the list iterates through all linked nodes. 
+																							In almost all cases however, the linked list will have a lower time complexity because it only runs until it encounters a null value, however the array method runs through all indices in the 
+																							array even if a large portion of them are null. The only case in which they will have the same time complexity is if the array is full of all non-null values.
+
+void sort()							O(n^2)						O(n^2)					In my implementation of each of these methods, they had a similar time complexity. The array sort() method is a more traditional looking method that is very similar to the example for insertion 
+																							sort that was given in class. The O(n^2) complexity is due to it having to iterate through the list up to n times. The linked list method, while not iterating over the original linked list n times, does iterate over a copy of the list and compares the items within. This gives it a time complexity of O(n^2).
+
+T remove(int index)					O(n)						O(n)					The implementation of this method in the ArrayList class has a time complexity of O(n) due to its requirement to copy the entire list (- the value removed) on to a new temporary list. This means 
+																							that the linked list implementation of this method will almost always have a better time complexity, however it is still labeled as a time complexity of O(n) because in the worst case scenario it will have to iterate through all of the values in the list before finding the index that it needs to remove.
+
+void greaterThan(T element)			O(n)						O(n)					Both of the implementations of this method require iterations over the entire list or array in the case that isSorted() is false. This justifies a time complexity of O(n) for both of them. In the
+																							case that isSorted is true, the array method only needs to iterate from the first index of the given element to the end of the list. This is similar to the situation that occurs when the linked list is sorted. Except that it iterates until it finds an element greater than the given element then sets the list to begin at that point.
+
+void lessThan(T element)			O(n)						O(n)					The time complexity of this method is very similar to that of the greaterThan method for both the linked list implementation and the array implementation. Both of the unsorted methods require
+																							an interation through the entire list or array thus giving them the O(n) time complexity, and the sorted methods allow for the processes to be sped up by not searching through the entire list or array, but upon finding a value that is greater than the element ceasing to copy in the case of the array or setting the next value for the pointer equal to null in the case of the list.
+
+void equalTo(T element)				O(n)						O(n)					Both of these implementations of the method require iterating over the entire list or array. This means that they both have a time complexity of O(n). In most cases the linked list will be more
+																							efficient because does not need to iterate over null values like the array does. The one case in which they will be very similar is if the array is full of all non-null values.
+
+String toString()					O(n)						O(n)					Each of these implementations have the same time complexity, O(n) because they both must iterate through all of the values in the respective array or list. Again, the linked list will have a 
+																							slight edge here due to the fact that it does not need to iterate over null values.
